@@ -78,7 +78,7 @@ extern "C" void app_main(void)
         TON1(I1);
 
         TOGGLE1.RST = I2;
-        TOGGLE1(TON1(I1));
+        TOGGLE1(TON1.Q);
 
         // Ausgaenge setzen
 
