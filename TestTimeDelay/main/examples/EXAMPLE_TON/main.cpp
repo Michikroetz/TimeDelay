@@ -73,8 +73,6 @@ extern "C" void app_main(void)
 
     TOF TOF1;
     TOF1.PT = 1000;
-    TOF TOF2;
-    TOF2.PT = 1000;
 
     while (true) // Endlos-Schleife
     {
@@ -101,8 +99,8 @@ extern "C" void app_main(void)
 
         // den I1 an TON1 uebergeben, und TON1 aufrufen
         TON1(I1);
-        TOF2(R_TRIG1.Q);
-        RS1(TON1.Q, TOF2.Q);
+        TOF1(R_TRIG1.Q);
+        RS1(TON1.Q, TOF1.Q);
 
         // Ausgaenge setzen
         gpio_set_level(GPIO_Q1, RS1.Q1);
