@@ -22,7 +22,11 @@ static const char * const TAG = "EXAMPLE_TOGGLE";
 
 #define BUTTON_I1 GPIO_NUM_26        // Pin 26.
 #define BUTTON_I2 GPIO_NUM_32        // Pin 32.
-#define GPIO_Q1 GPIO_NUM_19            // Pin 19.
+#define BUTTON_I3 GPIO_NUM_39        // Pin 39.
+#define GPIO_Q1 GPIO_NUM_19          // Pin 19.
+#define GPIO_Q2 GPIO_NUM_23
+#define GPIO_Q3 GPIO_NUM_33
+#define GPIO_Q4 GPIO_NUM_25
 
 
 
@@ -40,13 +44,24 @@ extern "C" void app_main(void)
        functions.)
     */
     gpio_reset_pin(GPIO_Q1);
-    gpio_reset_pin(BUTTON_I1);
-    gpio_reset_pin(BUTTON_I2);
-    /* Set the GPIO as a push/pull output */
-    gpio_set_direction(GPIO_Q1, GPIO_MODE_OUTPUT);
-    gpio_set_direction(BUTTON_I1, GPIO_MODE_INPUT);
-    gpio_set_direction(BUTTON_I2, GPIO_MODE_INPUT);
-    gpio_set_level(GPIO_Q1, 0); //set to 0 at Reset.
+        gpio_reset_pin(GPIO_Q2);
+        gpio_reset_pin(GPIO_Q3);
+        gpio_reset_pin(GPIO_Q4);
+        gpio_reset_pin(BUTTON_I1);
+        gpio_reset_pin(BUTTON_I2);
+        gpio_reset_pin(BUTTON_I3);
+        /* Set the GPIO as a push/pull output */
+        gpio_set_direction(GPIO_Q1, GPIO_MODE_OUTPUT);
+        gpio_set_direction(GPIO_Q2, GPIO_MODE_OUTPUT);
+        gpio_set_direction(GPIO_Q3, GPIO_MODE_OUTPUT);
+        gpio_set_direction(GPIO_Q4, GPIO_MODE_OUTPUT);
+        gpio_set_direction(BUTTON_I1, GPIO_MODE_INPUT);
+        gpio_set_direction(BUTTON_I2, GPIO_MODE_INPUT);
+        gpio_set_direction(BUTTON_I3, GPIO_MODE_INPUT);
+        gpio_set_level(GPIO_Q1, 0); //set to 0 at Reset.
+        gpio_set_level(GPIO_Q2, 0); //set to 0 at Reset.
+        gpio_set_level(GPIO_Q3, 0); //set to 0 at Reset.
+        gpio_set_level(GPIO_Q4, 0); //set to 0 at Reset.
 
 
     TOGGLE TOGGLE1;
